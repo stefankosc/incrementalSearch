@@ -1,6 +1,19 @@
+
+
+input {
+    width: 200px;
+}
+
 #listOfCountries {
+    width: 200px;
+}
+.border {
+    border: 1px black solid;
+}
+#results {
     border: 1px solid black;
-    border-radius: 2px;
-    width: 130px;
-    height: 300px;
+}
+
+#noResults {
+    background-color: grey;
 }
