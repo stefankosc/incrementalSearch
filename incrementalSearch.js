@@ -40,7 +40,7 @@
         //event listener for leaving the input field
         document.addEventListener('click', function dis(e) {
             //this line causes the error when I type at least two letters and delete them (error doubles)
-            if (e.target.id == countriesList) {
+            if (e.target.id == 'countriesList') {
                 return;
             } else {
                 document.getElementById('listOfCountries').style.display = 'none';
@@ -48,10 +48,17 @@
             textField.addEventListener('mouseenter', function () {
                 document.getElementById('listOfCountries').style.display = 'block';
                 document.removeEventListener('click', dis);
+                list.classList.remove('border');
+
             });
             textField.addEventListener('mouseout', function () {
                 document.getElementById('listOfCountries').style.display = 'none';
                 document.removeEventListener('click',dis);
+
+                document.getElementById('countriesList').addEventListener('mouseover', function (){
+
+
+                })
             })
         })
     });
