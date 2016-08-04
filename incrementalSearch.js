@@ -45,20 +45,22 @@
             } else {
                 document.getElementById('listOfCountries').style.display = 'none';
             };
-            textField.addEventListener('mouseenter', function () {
+            textField.addEventListener('mouseover', function (e) {
                 document.getElementById('listOfCountries').style.display = 'block';
                 document.removeEventListener('click', dis);
-                list.classList.remove('border');
-
+                if (e.target.value === '') {
+                    list.classList.remove('border');
+                }
             });
             textField.addEventListener('mouseout', function () {
                 document.getElementById('listOfCountries').style.display = 'none';
-                document.removeEventListener('click',dis);
-
-                document.getElementById('countriesList').addEventListener('mouseover', function (){
+                document.removeEventListener('click', dis);
 
 
-                })
+                //document.getElementById('countriesList').addEventListener('mouseover', function (){
+
+
+                //})
             })
         })
     });
