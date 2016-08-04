@@ -12,6 +12,7 @@
     //event listener for typed letters
     textField.addEventListener('input', function() {
         list.innerHTML = '';
+        var numberOfLines = 1;
         if (textField.value.length == 0) {
             return;
         }
@@ -22,7 +23,7 @@
         var countriesFound = false;
         //selecting countries based on letters typed by user
         for (i = 0; countries[i]; i++) {
-            if (countries[i].indexOf(letter) == 0){
+            if (countries[i].indexOf(letter) == 0 && numberOfLines < 5){
                 //how to show only 4 results?
                 //I tried to store results of loop (capitalCountries[i]) in an array
                 //and then assign it via innerHTML but it did not work but printed
@@ -30,6 +31,7 @@
                 list.innerHTML += '<div id="countriesList">' + capitalCountries[i] + '</div>';
                 countriesFound = true;
                 list.classList.add('border');
+                numberOfLines++;
             }
         }
         if (countriesFound == false) {
